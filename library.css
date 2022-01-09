@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700;900&display=swap');
+:root {
+    --fireopal: #f1faee;
+}
+
+body {
+    font-family: 'Nunito', Arial, Sans-serif;
+    background-color: #e5e5e5;
+}
+nav {
+    background: #fca311;
+    text-align: center;
+    padding: 5vh;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+nav h1, body {
+    margin: 0;
+}
+
+nav h1 {
+    font-weight: 900;
+    color: #000000;
+}
+
+#books-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+    width: 95vw;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.book {
+    border: 5px solid #14213d;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5vh;
+    width: auto;
+    /* box-shadow: 5px 5px 5px rgb(173, 173, 173); */
+    transition: 0.2s;
+}
+
+.book:hover {
+    /* box-shadow: 5px 5px 5px rgb(112, 112, 112); */
+    background-color: #14213d;
+    /* border: 5px dashed #14213d; */
+    color: #ffffff;
+    transition: 0.2s;
+}
+
