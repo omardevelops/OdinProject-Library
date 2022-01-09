@@ -31,15 +31,16 @@ nav h1 {
     flex-flow: wrap;
     width: 95vw;
     gap: 30px;
-    margin: 0 auto;
+    margin: 15px auto;
 }
 
 .book {
     border: 5px solid #14213d;
     border-radius: 15px;
+    box-sizing: border-box;
     text-align: center;
     padding: 5vh;
-    width: auto;
+    /* width: 25%; */
     /* box-shadow: 5px 5px 5px rgb(173, 173, 173); */
     transition: 0.2s;
 }

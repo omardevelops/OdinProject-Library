@@ -4,7 +4,35 @@ let myLibrary = [
         author: '#1',
         pages: '111',
         read: true,
-    }
+    },
+
+    {
+        title: '1',
+        author: '#1',
+        pages: '111',
+        read: true,
+    },
+
+    {
+        title: '1',
+        author: '#1',
+        pages: '111',
+        read: false,
+    },
+
+    {
+        title: '1',
+        author: '#1',
+        pages: '111',
+        read: false,
+    },
+
+    {
+        title: '1',
+        author: '#1',
+        pages: '111',
+        read: false,
+    },
 ];
 const booksListDiv = document.querySelector('#books-list');
 
@@ -31,21 +59,21 @@ function changeReadStatus(book) {
 function displayLibrary(library, displayContainer) {
     if (library.length !== 0) {
         library.forEach(book => {
-            // Display book code
             const newBookDiv = document.createElement('div');
             newBookDiv.className = 'book';
-            const titleHeader = document.createElement('h3');
-            titleHeader.innerText = `Title: ${book.title}`;
-            newBookDiv.appendChild(titleHeader);
-            const authorHeader = document.createElement('h3');
-            authorHeader.innerText = `Author: ${book.author}`;
-            newBookDiv.appendChild(authorHeader);
-            const pagesHeader = document.createElement('h3');
-            pagesHeader.innerText = `Number of Pages: ${book.pages}`;
-            newBookDiv.appendChild(pagesHeader);
-            const readHeader = document.createElement('h3');
-            readHeader.innerText = book.read ? 'Read' : 'Not Read';
-            newBookDiv.appendChild(readHeader);
+
+            headers = {
+                title: `Title: ${book.title}`,
+                author: `Author: ${book.author}`,
+                pages: `Number of Pages: ${book.pages}`,
+                read: book.read ? 'Read' : 'Not Read',
+            }
+
+            for (const header in headers) {
+                const element = document.createElement('h3');
+                element.innerText = headers[header];
+                newBookDiv.appendChild(element);
+            }
 
             displayContainer.appendChild(newBookDiv);
 
