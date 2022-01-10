@@ -24,18 +24,6 @@ nav h1 {
     color: #000000;
 }
 
-nav button {
-    font-size: 0.7em;
-    padding: 10px 15px;
-    margin: 15px 0;
-    /* border: none; */
-    border-radius: 15px;
-    background: #ffffff;
-    font-family: inherit;
-    font-weight: 500;
-    /* color: white; */
-}
-
 #books-list {
     display: flex;
     align-items: center;
@@ -47,21 +35,39 @@ nav button {
 }
 
 .book {
+    display: flex;
+    flex-direction: column;
     border: 5px solid #14213d;
     border-radius: 15px;
     box-sizing: border-box;
     text-align: center;
     padding: 5vh;
-    width: 20vw;
-    height: 300px;
+    width: auto;
+    white-space: nowrap;
     /* box-shadow: 5px 5px 5px rgb(173, 173, 173); */
-    transition: 0.2s;
+    background-color: white;
 }
 
-.book:hover {
-    /* box-shadow: 5px 5px 5px rgb(112, 112, 112); */
+.book h3 {
+    /* height: 400px; */
+}
+
+
+button {
+    font-size: 22px;
+    padding: 10px 15px;
+    margin: 15px 0;
+    /* border: none; */
+    border-radius: 15px;
+    background: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+    transition: 0.2s;
+    /* color: white; */
+}
+
+button:hover {
     background-color: #14213d;
-    /* border: 5px dashed #14213d; */
     color: #ffffff;
     transition: 0.2s;
 }

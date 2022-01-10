@@ -70,9 +70,15 @@ function displayLibrary(library, displayContainer) {
             }
 
             for (const header in headers) {
-                const element = document.createElement('h3');
+                let element;
+                if (header === 'read') {
+                    element = document.createElement('button');
+                } else {
+                    element = document.createElement('h3');
+                }
                 element.innerText = headers[header];
                 newBookDiv.appendChild(element);
+                
             }
 
             displayContainer.appendChild(newBookDiv);
