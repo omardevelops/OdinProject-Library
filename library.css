@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700;900&display=swap');
 :root {
     --fireopal: #f1faee;
 }
@@ -10,7 +10,7 @@ body {
 nav {
     background: #fca311;
     text-align: center;
-    padding: 5vh;
+    padding: 2vh;
     font-size: 2em;
     margin-bottom: 30px;
 }
@@ -22,6 +22,18 @@ nav h1, body {
 nav h1 {
     font-weight: 900;
     color: #000000;
+}
+
+nav button {
+    font-size: 0.7em;
+    padding: 10px 15px;
+    margin: 15px 0;
+    /* border: none; */
+    border-radius: 15px;
+    background: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+    /* color: white; */
 }
 
 #books-list {
@@ -40,7 +52,8 @@ nav h1 {
     box-sizing: border-box;
     text-align: center;
     padding: 5vh;
-    /* width: 25%; */
+    width: 20vw;
+    height: 300px;
     /* box-shadow: 5px 5px 5px rgb(173, 173, 173); */
     transition: 0.2s;
 }

@@ -1,7 +1,7 @@
 let myLibrary = [
     {
-        title: '1',
-        author: '#1',
+        title: 'Harry Potter and the Goblet of Fire',
+        author: 'JK Rolling',
         pages: '111',
         read: true,
     },
@@ -63,10 +63,10 @@ function displayLibrary(library, displayContainer) {
             newBookDiv.className = 'book';
 
             headers = {
-                title: `Title: ${book.title}`,
+                title: `${book.title}`,
                 author: `Author: ${book.author}`,
-                pages: `Number of Pages: ${book.pages}`,
-                read: book.read ? 'Read' : 'Not Read',
+                pages: `${book.pages} Pages`,
+                read: book.read ? 'Read✔️' : 'Not Read❌',
             }
 
             for (const header in headers) {
