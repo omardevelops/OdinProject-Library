@@ -25,12 +25,16 @@ nav h1 {
     text-shadow: 5px 5px #14213d;
 }
 
+nav button {
+    margin: 15px 0;
+}
+
 #books-list {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: wrap;
-    width: 85vw;
+    width: 95vw;
     gap: 30px;
     margin: 15px auto;
 }
@@ -57,12 +61,13 @@ nav h1 {
 button {
     font-size: 22px;
     padding: 10px 15px;
-    margin: 15px 0;
     border: none;
     border-radius: 15px;
     font-family: inherit;
     font-weight: 500;
     transition: 0.2s;
+    width: 15vw;
+    margin: 0 auto;
     /* color: white; */
 }
 

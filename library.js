@@ -34,6 +34,12 @@ let myLibrary = [
         read: false,
     },
 ];
+
+let readButtonText = {
+    read: 'Read✔️',
+    notRead: 'Not Read❌',
+}
+
 const booksListDiv = document.querySelector('#books-list');
 
 function Book(title, author, pages, read) {
@@ -62,19 +68,20 @@ function displayLibrary(library, displayContainer) {
             const newBookDiv = document.createElement('div');
             newBookDiv.className = 'book';
 
-            headers = {
+            let headers = {
                 title: `${book.title}`,
                 author: `Author: ${book.author}`,
                 pages: `${book.pages} Pages`,
-                read: book.read ? 'Read✔️' : 'Not Read❌',
+                read: book.read ? readButtonText.read : readButtonText.notRead,
             }
 
             for (const header in headers) {
                 let element;
                 if (header === 'read') {
                     element = document.createElement('button');
-                    if (book.read)    element.className = 'read';
-                    else    element.className = 'notRead';
+                    element.classList.add('readButton');
+                    if (book.read)    element.classList.add('read');
+                    else    element.classList.add('notRead');
                 } else {
                     element = document.createElement('h3');
                 }
@@ -90,3 +97,26 @@ function displayLibrary(library, displayContainer) {
 }
 
 displayLibrary(myLibrary, booksListDiv);
+
+const readButton = document.querySelectorAll('.readButton');
+readButton.forEach((button, key) => {
+    button.addEventListener('click', () => {
+        // Clear classes
+        button.classList.remove('read');
+        button.classList.remove('notRead');
+        
+        // Update book value
+        let myBook = myLibrary[key];
+        myBook.read = !myBook.read;
+        
+        // Change View of button
+        if (myBook.read) {
+            button.classList.add('read');
+            button.innerText = readButtonText.read;
+        } else {
+            button.classList.add('notRead');
+            button.innerText = readButtonText.notRead;
+        }
+        console.log(myBook);
+    });
+})
