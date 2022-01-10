@@ -8,11 +8,12 @@ body {
     background-color: #e5e5e5;
 }
 nav {
-    background: #fca311;
+    background: #F2542D;
     text-align: center;
     padding: 2vh;
     font-size: 2em;
     margin-bottom: 30px;
+    color: white;
 }
 
 nav h1, body {
@@ -21,7 +22,7 @@ nav h1, body {
 
 nav h1 {
     font-weight: 900;
-    color: #000000;
+    text-shadow: 5px 5px #14213d;
 }
 
 #books-list {
@@ -29,7 +30,7 @@ nav h1 {
     align-items: center;
     justify-content: center;
     flex-flow: wrap;
-    width: 95vw;
+    width: 85vw;
     gap: 30px;
     margin: 15px auto;
 }
@@ -57,9 +58,8 @@ button {
     font-size: 22px;
     padding: 10px 15px;
     margin: 15px 0;
-    /* border: none; */
+    border: none;
     border-radius: 15px;
-    background: #ffffff;
     font-family: inherit;
     font-weight: 500;
     transition: 0.2s;
@@ -70,5 +70,28 @@ button:hover {
     background-color: #14213d;
     color: #ffffff;
     transition: 0.2s;
+}
+
+button:focus {
+    border: none;
+}
+
+.read {
+    background-color: #1fb15b;
+    color: white;
+}
+
+.read:hover {
+    background-color: #14723b;
+}
+
+.notRead {
+    background-color: #db4a4a;
+    color: white;
+}
+
+.notRead:hover {
+    background-color: #942424;
+    
 }
 

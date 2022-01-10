@@ -73,6 +73,8 @@ function displayLibrary(library, displayContainer) {
                 let element;
                 if (header === 'read') {
                     element = document.createElement('button');
+                    if (book.read)    element.className = 'read';
+                    else    element.className = 'notRead';
                 } else {
                     element = document.createElement('h3');
                 }
