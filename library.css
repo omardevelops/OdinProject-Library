@@ -16,13 +16,14 @@ nav {
     color: white;
 }
 
-nav h1, body {
+body {
     margin: 0;
 }
 
 nav h1 {
     font-weight: 900;
     text-shadow: 5px 5px #14213d;
+    margin: 0;
 }
 
 nav #newBookButton {
@@ -41,15 +42,35 @@ nav form {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 22px;
+    gap: 15px;
+    /* flex-direction: column; */
 }
 
 nav form div {
-    margin: 0px 15px;
+
 }
 
 nav form div label {
     margin-right: 5px;
+    display: block;
+    text-align: center;
+}
+
+nav form div input[type=text] {
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+#markAsRead {
+    width: 100%;
+}
+
+input[type=checkbox] {
+    height: 30px;
+    width: 30px;
 }
 
 #books-list {
@@ -65,7 +86,7 @@ nav form div label {
 .book {
     display: flex;
     flex-direction: column;
-    border: 5px solid #14213d;
+    border: 3px solid #14213d;
     border-radius: 15px;
     box-sizing: border-box;
     text-align: center;
