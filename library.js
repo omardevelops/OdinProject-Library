@@ -1,10 +1,9 @@
 let myLibrary = [{
-        title: 'Harry Potter and the Goblet of Fire',
-        author: 'JK Rolling',
-        pages: '111',
-        read: true,
-    },
-];
+    title: 'Harry Potter and the Goblet of Fire',
+    author: 'JK Rolling',
+    pages: '111',
+    read: true,
+}, ];
 
 let readButtonText = {
     read: 'Read✔️',
@@ -64,7 +63,7 @@ function displayLibrary(library, displayContainer) {
             }
 
             displayContainer.appendChild(newBookDiv);
-            
+
 
         });
         addEventListenersToReadButtons();
@@ -100,16 +99,28 @@ displayLibrary(myLibrary, booksListDiv);
 
 // New Book Button
 const newBookButton = document.querySelector('#newBookButton');
-const formInputs = document.querySelectorAll('nav form div input')
+const formInputs = document.querySelectorAll('nav form div input');
 newBookButton.addEventListener('click', () => {
-    let newBook = new Book();
-    formInputs.forEach((input, index) => {
-        if (input.type === 'checkbox') newBook.read = input.checked
-        else {
-            newBook[index] = input.value;
+    let isUndefined = false;
+    console.log(formInputs);
+    for (let input of formInputs) {
+        console.log(input);
+        if (input.type !== 'checkbox' && !input.value) {
+            console.log('chicken');
+            isUndefined = true;
+            break;
         }
-    })
-    addBookToLibrary(myLibrary, newBook);
-    displayLibrary(myLibrary, booksListDiv);
+    }
+    if (isUndefined === false) {
+        console.log('new boy');
+        let newBook = new Book(
+            formInputs[0].value,
+            formInputs[1].value,
+            formInputs[2].value,
+            formInputs[3].checked,
+        );
 
+        addBookToLibrary(myLibrary, newBook);
+        displayLibrary(myLibrary, booksListDiv);
+    }
 });
