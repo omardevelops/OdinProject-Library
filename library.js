@@ -62,6 +62,11 @@ function changeReadStatus(book) {
     book.read = !book.read;
 }
 
+function toggleFormPopUp() {
+    const form = document.querySelector('nav form');
+    // form.style.display = 'block';
+}
+
 function displayLibrary(library, displayContainer) {
     if (library.length !== 0) {
         library.forEach(book => {
@@ -98,6 +103,10 @@ function displayLibrary(library, displayContainer) {
 
 displayLibrary(myLibrary, booksListDiv);
 
+// New Book Button
+const newBookButton = document.querySelector('#newBookButton');
+newBookButton.addEventListener('click', toggleFormPopUp);
+// Read Buttons
 const readButton = document.querySelectorAll('.readButton');
 readButton.forEach((button, key) => {
     button.addEventListener('click', () => {
@@ -117,6 +126,5 @@ readButton.forEach((button, key) => {
             button.classList.add('notRead');
             button.innerText = readButtonText.notRead;
         }
-        console.log(myBook);
     });
 })
