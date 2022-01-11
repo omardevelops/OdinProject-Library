@@ -8,7 +8,7 @@ body {
     background-color: #e5e5e5;
 }
 nav {
-    background: #F2542D;
+    background: #4dd193;
     text-align: center;
     padding: 2vh;
     font-size: 2em;
@@ -66,8 +66,9 @@ button {
     font-family: inherit;
     font-weight: 500;
     transition: 0.2s;
-    width: 15vw;
+    width: 200px;
     margin: 0 auto;
+    background-color: white;
     /* color: white; */
 }
 
