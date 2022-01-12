@@ -84,7 +84,7 @@ input[type=checkbox] {
 .book {
     display: flex;
     flex-direction: column;
-    border: 3px solid #14213d;
+    /* border: 3px solid #14213d; */
     border-radius: 15px;
     box-sizing: border-box;
     text-align: center;
