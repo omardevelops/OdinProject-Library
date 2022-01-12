@@ -24,8 +24,10 @@ function addBookToLibrary(library, book) {
     library.push(book);
 }
 
-function removeBookFromLibrary(library, book) {
+// Removes book with specified index and returns the removed book
+function removeBookFromLibrary(library, index) {
     // Remove book code
+    return myLibrary.splice(index, 1);
 }
 
 function changeReadStatus(book) {
@@ -62,15 +64,24 @@ function displayLibrary(library, displayContainer) {
 
             }
 
+            // Add "Remove" Button
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('removeButton');
+            removeButton.innerText = 'Remove Book🗑️';
+            // removeButton.classList.add('book_'+index);
+            newBookDiv.appendChild(removeButton);
+
             displayContainer.appendChild(newBookDiv);
 
 
         });
-        addEventListenersToReadButtons();
+        addEventListenersToButtons();
+    } else {
+        booksListDiv.textContent = 'There is nothing here...';
     }
 }
 
-function addEventListenersToReadButtons() {
+function addEventListenersToButtons() {
     // Read Buttons
     const readButton = document.querySelectorAll('.readButton');
     readButton.forEach((button, key) => {
@@ -93,6 +104,23 @@ function addEventListenersToReadButtons() {
             }
         });
     })
+
+    // Remove Book Buttons
+    const removeButton = document.querySelectorAll('.removeButton');
+    removeButton.forEach((button, key) => {
+        button.addEventListener('click', () => {
+        // Show confirm pop up
+
+        // Update value in books
+        removeBookFromLibrary(myLibrary, key);
+        alert('succesfully removed book');
+        console.log(myLibrary);
+        // Update view
+        displayLibrary(myLibrary, booksListDiv);
+        })
+
+    });
+
 }
 
 displayLibrary(myLibrary, booksListDiv);

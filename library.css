@@ -136,3 +136,9 @@ button:focus {
     
 }
 
+.removeButton {
+    background-color: #606863;
+    color: white;
+    margin-top: 15px;
+}
+
