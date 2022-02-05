@@ -12,13 +12,23 @@ let readButtonText = {
 
 const booksListDiv = document.querySelector('#books-list');
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = () => `${title} by ${author}, ${pages} pages, ${read ? 'already read.' : 'not read yet.'}`;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    info = () => `${title} by ${author}, ${pages} pages, ${read ? 'already read.' : 'not read yet.'}`;
 }
+
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//     this.info = () => `${title} by ${author}, ${pages} pages, ${read ? 'already read.' : 'not read yet.'}`;
+// }
 
 function addBookToLibrary(library, book) {
     library.push(book);
@@ -109,14 +119,14 @@ function addEventListenersToButtons() {
     const removeButton = document.querySelectorAll('.removeButton');
     removeButton.forEach((button, key) => {
         button.addEventListener('click', () => {
-        // Show confirm pop up
+            // Show confirm pop up
 
-        // Update value in books
-        removeBookFromLibrary(myLibrary, key);
-        alert('succesfully removed book');
-        console.log(myLibrary);
-        // Update view
-        displayLibrary(myLibrary, booksListDiv);
+            // Update value in books
+            removeBookFromLibrary(myLibrary, key);
+            alert('succesfully removed book');
+            console.log(myLibrary);
+            // Update view
+            displayLibrary(myLibrary, booksListDiv);
         })
 
     });
