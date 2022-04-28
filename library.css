@@ -53,6 +53,10 @@ nav form div label {
   display: block;
   text-align: center;
 }
+nav form div label::after {
+  content: '*';
+  color: red;
+}
 
 input[type='text'],
 input[type='number'] {
@@ -138,4 +142,9 @@ button:focus {
   background-color: #606863;
   color: white;
   margin-top: 15px;
+}
+
+.errorInput {
+  background-color: #db4a4a;
+  color: white;
 }

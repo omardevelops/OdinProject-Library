@@ -137,21 +137,30 @@ displayLibrary(myLibrary, booksListDiv);
 
 // New Book Button
 const newBookButton = document.querySelector('#newBookButton');
+
+// Form Input Validation
+const form = document.querySelector('nav form');
 const formLabels = document.querySelectorAll('nav form div label');
 const formInputs = document.querySelectorAll('nav form div input');
-newBookButton.addEventListener('click', (event) => {
-  let isUndefined = false;
-  console.log(formInputs);
-  for (let input of formInputs) {
-    console.log(input);
-    if (input.type !== 'checkbox' && !input.value) {
-      console.log('chicken');
-      isUndefined = true;
-      event.preventDefault();
-      break;
-    }
+let isFormValid = true;
+
+function checkInputError(input) {
+  if (input.validity.valid) {
+    input.classList.remove('errorInput');
+  } else {
+    input.classList.add('errorInput');
+    isFormValid = false;
   }
-  if (isUndefined === false) {
+}
+
+formInputs.forEach((input) =>
+  input.addEventListener('input', () => {
+    checkInputError(input);
+  })
+);
+newBookButton.addEventListener('click', (event) => {
+  formInputs.forEach((input) => checkInputError(input));
+  if (isFormValid) {
     console.log('new boy');
     let newBook = new Book(
       formInputs[0].value,
@@ -162,5 +171,9 @@ newBookButton.addEventListener('click', (event) => {
 
     addBookToLibrary(myLibrary, newBook);
     displayLibrary(myLibrary, booksListDiv);
+  } else {
+    event.preventDefault();
+    alert('Invalid Form.');
   }
+  isFormValid = true;
 });
