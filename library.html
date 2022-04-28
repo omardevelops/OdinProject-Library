@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,26 @@
     <link rel="stylesheet" href="library.css">
     <title>Library App</title>
 </head>
+
 <body>
     <nav>
         <h1>Your Library</h1>
-        <form action="">
-            <div><label for="">Title</label><input type="text" name="" id=""></div>
-            <div><label for="">Author</label><input type="text" name="" id=""></div>
-            <div><label for="">Number of Pages</label><input type="number" name="" id=""></div>
-            <div id='markAsRead'><label for="">Mark as Read? </label><input type="checkbox" name="" id=""></div>
+        <form action="" novalidate>
+            <div><label for="title">Title</label><input type="text" name="title" id="title" required></div>
+            <div><label for="author">Author</label><input type="text" name="author" id="author" required></div>
+            <div><label for="pages">Number of Pages</label><input type="number" name="pages" id="pages" required></div>
+            <div id='markAsRead'><label for="markread">Mark as Read? </label><input type="checkbox" name="markread"
+                    id="markread"></div>
+            <button id="newBookButton" type="submit">📕 Add Book</button>
         </form>
-        <button id="newBookButton">📕 Add Book</button>
+
     </nav>
     <div id="books-list">
         <!-- Books to be inserted here by library.js -->
     </div>
     <!-- <img src="https://c.tenor.com/-4noV-rOL1QAAAAC/avatar-sokka.gif" alt="library"> -->
-    
+
 </body>
 <script src="library.js"></script>
+
 </html>
