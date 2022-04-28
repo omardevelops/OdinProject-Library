@@ -1,144 +1,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700;900&display=swap');
 :root {
-    --fireopal: #f1faee;
+  --fireopal: #f1faee;
 }
 
 body {
-    font-family: 'Nunito', Arial, Sans-serif;
-    background-color: #e5e5e5;
-    margin: 0;
+  font-family: 'Nunito', Arial, Sans-serif;
+  background-color: #e5e5e5;
+  margin: 0;
 }
 nav {
-    background: #4dd193;
-    text-align: center;
-    padding: 5px;
-    font-size: 2em;
-    margin: 0;
-    margin-bottom: 30px;
-    color: white;
+  background: #4dd193;
+  text-align: center;
+  padding: 5px;
+  font-size: 2em;
+  margin: 0;
+  margin-bottom: 30px;
+  color: white;
 }
 
 nav h1 {
-    font-weight: 900;
-    text-shadow: 5px 5px #14213d;
-    margin: 0;
+  font-weight: 900;
+  text-shadow: 5px 5px #14213d;
+  margin: 0;
 }
 
 nav #newBookButton {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 nav form {
-    background-color: white;
-    color: #14213d;
-    width: 85vw;
-    margin: 15px auto;
-    border-radius: 15px;
-    /* height: 300px; */
-    padding: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    gap: 15px;
-    /* flex-direction: column; */
+  background-color: white;
+  color: #14213d;
+  width: 85vw;
+  margin: 15px auto;
+  border-radius: 15px;
+  /* height: 300px; */
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  gap: 15px;
+  /* flex-direction: column; */
 }
 
 nav form div {
-
 }
 
 nav form div label {
-    margin-right: 5px;
-    display: block;
-    text-align: center;
+  margin-right: 5px;
+  display: block;
+  text-align: center;
+}
+nav form div label::after {
+  content: '*';
+  color: red;
 }
 
-input[type=text], input[type=number] {
-    width: 200px;
-    height: 30px;
-    font-size: 18px;
-    font-family: inherit;
+input[type='text'],
+input[type='number'] {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+  font-family: inherit;
 }
 
 #markAsRead {
-    width: 100%;
+  width: 100%;
 }
 
-input[type=checkbox] {
-    height: 30px;
-    width: 30px;
+input[type='checkbox'] {
+  height: 30px;
+  width: 30px;
 }
 
 #books-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: wrap;
-    width: 95vw;
-    gap: 30px;
-    margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  width: 95vw;
+  gap: 30px;
+  margin: 15px auto;
 }
 
 .book {
-    display: flex;
-    flex-direction: column;
-    /* border: 3px solid #14213d; */
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 15px;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* border: 3px solid #14213d; */
+  border-radius: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 15px;
+  background-color: white;
 }
 
-
 button {
-    font-size: 22px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 15px;
-    font-family: inherit;
-    font-weight: 500;
-    transition: 0.2s;
-    width: 200px;
-    margin: 0 auto;
-    background-color: white;
-    /* color: white; */
+  font-size: 22px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 15px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: 0.2s;
+  width: 200px;
+  margin: 0 auto;
+  background-color: #5980d5;
+  color: #ffffff;
+  /* color: white; */
 }
 
 button:hover {
-    background-color: #14213d;
-    color: #ffffff;
-    transition: 0.2s;
+  background-color: #273c68;
+  transition: 0.2s;
 }
 
 button:focus {
-    border: none;
+  border: none;
 }
 
 .read {
-    background-color: #1fb15b;
-    color: white;
+  background-color: #1fb15b;
+  color: white;
 }
 
 .read:hover {
-    background-color: #14723b;
+  background-color: #14723b;
 }
 
 .notRead {
-    background-color: #db4a4a;
-    color: white;
+  background-color: #db4a4a;
+  color: white;
 }
 
 .notRead:hover {
-    background-color: #942424;
-    
+  background-color: #942424;
 }
 
 .removeButton {
-    background-color: #606863;
-    color: white;
-    margin-top: 15px;
+  background-color: #606863;
+  color: white;
+  margin-top: 15px;
 }
 
+.errorInput {
+  background-color: #db4a4a;
+  color: white;
+}
