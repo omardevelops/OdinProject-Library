@@ -159,6 +159,8 @@ formInputs.forEach((input) =>
   })
 );
 newBookButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
   formInputs.forEach((input) => checkInputError(input));
   if (isFormValid) {
     console.log('new boy');
@@ -172,7 +174,6 @@ newBookButton.addEventListener('click', (event) => {
     addBookToLibrary(myLibrary, newBook);
     displayLibrary(myLibrary, booksListDiv);
   } else {
-    event.preventDefault();
     alert('Invalid Form.');
   }
   isFormValid = true;
